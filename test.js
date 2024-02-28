@@ -843,6 +843,7 @@ const shorthandShiShen = {
   七杀: "杀",
   正印: "印",
   偏印: "枭",
+  命主: "命",
 };
 
 const displayBz = (result) => {
