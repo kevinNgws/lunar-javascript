@@ -846,6 +846,21 @@ const shorthandShiShen = {
   命主: "命",
 };
 
+const shorthandDiShi = {
+  长生: "长",
+  沐浴: "沐",
+  冠带: "冠",
+  临官: "临",
+  帝旺: "帝",
+  衰: "衰",
+  病: "病",
+  死: "死",
+  墓: "墓",
+  绝: "绝",
+  胎: "胎",
+  养: "养",
+};
+
 const displayBz = (result) => {
   console.log(
     `年: ${result.year} (${result.yearDiShi})\n月: ${result.month} (${result.monthDiShi})\n日: ${result.day} (${result.dayDiShi})\n时: ${result.time} (${result.timeDiShi})`
