@@ -9,17 +9,17 @@ const calendar = {};
 for (startYear = 2024; startYear <= endYear; startYear++) {
   calendar[startYear] = {};
   for (let startMonth = 1; startMonth <= 12; startMonth++) {
-    const padMonth = startMonth;
-    // const padMonth = _.padStart(startMonth.toString(), 2, '0');
+    // const padMonth = startMonth;
+    const padMonth = _.padStart(startMonth.toString(), 2, '0');
     const numberOfDays = moment(`${startYear}-${padMonth}`, 'YYYY-MM').daysInMonth();
     calendar[startYear][padMonth] = {};
     for (let startDay = 1; startDay <= numberOfDays; startDay++) {
-      const padDay = startDay;
-      // const padDay = _.padStart(startDay.toString(), 2, '0');
+      // const padDay = startDay;
+      const padDay = _.padStart(startDay.toString(), 2, '0');
       calendar[startYear][padMonth][padDay] = {};
       for (let startHour = 0; startHour <= 23; startHour++) {
-        const padHour = startHour;
-        // const padHour = _.padStart(startHour.toString(), 2, '0');
+        // const padHour = startHour;
+        const padHour = _.padStart(startHour.toString(), 2, '0');
         const s = Solar.fromYmdHms(startYear, startMonth, startDay, startHour, 0, 0);
         const l = s.getLunar();
         const bz = l.getEightChar();
@@ -34,7 +34,7 @@ for (startYear = 2024; startYear <= endYear; startYear++) {
           if (name === prevJq.getName()) {
             name = jqList[i - 1];
             const prevPrevBz = jqTable[name].getLunar().getEightChar();
-            calendar[startYear][padMonth][padDay]['00'] = `${startYear}-${padMonth}-${padDay}`;
+            calendar[startYear][padMonth][padDay]['--'] = `${startYear}-${padMonth}-${padDay}`;
             calendar[startYear][padMonth][padDay][padHour] =
               `${bz.getYear()} | ${bz.getMonth()}-${prevPrevBz.getMonth()} | ${bz.getDay()} | ${bz.getTime()}`;
             break;
